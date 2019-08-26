@@ -73,3 +73,8 @@ autocmd BufEnter set ff=unix
 map <Leader>du :diffupd<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gd :Gdiff<cr>
+map <Leader>gc :Gcommit<cr>
+
+autocmd BufNewFile,BufRead *.md set spell | set spelllang=nl
+autocmd BufNewFile,BufRead !*.md set nospell
+
