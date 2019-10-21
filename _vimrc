@@ -83,3 +83,5 @@ map <Leader>gd :Gdiff<cr>
 map <Leader>gc :Gcommit<cr>
 
 autocmd BufNewFile,BufReadPost *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80
+autocmd BufNewFile,BufRead !*.md set nospell
+
