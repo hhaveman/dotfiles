@@ -17,6 +17,10 @@ call minpac#add('leafgarland/typescript-vim')
 call minpac#add('nanotech/jellybeans.vim')
 call minpac#add('magarcia/vim-angular2-snippets')
 call minpac#add('vim-airline/vim-airline')
+call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('ajorgensen/vim-markdown-toc')
+call minpac#add('junegunn/limelight.vim')
+call minpac#add('iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } })
 call minpac#add('k-takata/minpac', { 'type':'opt'})
 
 filetype plugin indent on
@@ -76,3 +80,6 @@ autocmd BufEnter set ff=unix
 map <Leader>du :diffupd<cr>
 map <Leader>gs :Gstatus<cr>
 map <Leader>gd :Gdiff<cr>
+map <Leader>gc :Gcommit<cr>
+
+autocmd BufNewFile,BufReadPost *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80
