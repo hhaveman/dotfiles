@@ -1,31 +1,39 @@
-packadd minpac
-call minpac#init()
+set nocompatible
 
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-dadbod')
-call minpac#add('tpope/vim-unimpaired')
-call minpac#add('rodjek/vim-puppet')
-call minpac#add('sjl/gundo.vim')
-call minpac#add('godlygeek/tabular')
-call minpac#add('zef/vim-cycle')
-call minpac#add('tommcdo/vim-exchange')
-call minpac#add('leafgarland/typescript-vim')
-call minpac#add('nanotech/jellybeans.vim')
-call minpac#add('magarcia/vim-angular2-snippets')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('altercation/vim-colors-solarized')
-call minpac#add('ajorgensen/vim-markdown-toc')
-call minpac#add('junegunn/limelight.vim')
-call minpac#add('iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } })
-call minpac#add('k-takata/minpac', { 'type':'opt'})
+set packpath^=~/vimfiles
+
+call plug#begin('~/vimfiles/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sensible'
+"Plug 'rodjek/vim-puppet'
+Plug 'sjl/gundo.vim'
+Plug 'godlygeek/tabular'
+Plug 'zef/vim-cycle'
+Plug 'tommcdo/vim-exchange'
+"Plug 'leafgarland/typescript-vim'
+Plug 'nanotech/jellybeans.vim'
+"Plug 'magarcia/vim-angular2-snippets'
+Plug 'vim-airline/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+""Plug 'ajorgensen/vim-markdown-toc'
+Plug 'junegunn/limelight.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+call plug#end()
+
+
 
 filetype plugin indent on
 
 source $VIMRUNTIME/defaults.vim
 
 set list
-set background=dark
+"set background=dark
 set number
 set langmenu=en
 set ignorecase
@@ -68,7 +76,8 @@ highlight! link DiffText MatchParen
 
 " ¦ = CTRL-K BB  ¬ = CTRL-K NO
 set listchars+=tab:\¦\ ,eol:\¬
-set diffopt+=iwhite
+set diffopt+=iwhiteall,icase
+set diffopt+=vertical
 
 set ff=unix
 
@@ -79,6 +88,7 @@ map <Leader>gs :Gstatus<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gc :Gcommit<cr>
 
-autocmd BufNewFile,BufReadPost *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80
+autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80 | setlocal formatoptions+=a
 autocmd BufNewFile,BufRead !*.md set nospell
 
+set whichwrap+=<,>,h,l
