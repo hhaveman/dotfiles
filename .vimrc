@@ -1,8 +1,8 @@
 set nocompatible
 
-set packpath^=~/vimfiles
+set packpath^=~./.vim
 
-call plug#begin('~/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -88,7 +88,7 @@ map <Leader>gs :Gstatus<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gc :Gcommit<cr>
 
-autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80 | setlocal formatoptions+=a
+autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80 | setlocal formatoptions-=a
 autocmd BufNewFile,BufRead !*.md set nospell
 
 set whichwrap+=<,>,h,l
