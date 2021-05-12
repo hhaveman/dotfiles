@@ -84,7 +84,7 @@ set ff=unix
 autocmd BufEnter set ff=unix
 
 map <Leader>du :diffupd<cr>
-map <Leader>gs :Gstatus<cr>
+map <Leader>gs :Git<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gc :Gcommit<cr>
 
