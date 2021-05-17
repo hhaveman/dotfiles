@@ -65,9 +65,9 @@ set ttyfast
 
 set ruler
 
-colorscheme elflord
+colorscheme jellybeans
 if &diff
-    colorscheme murphy
+"    colorscheme blue
     set nocursorline
 endif
 
@@ -84,7 +84,7 @@ set ff=unix
 autocmd BufEnter set ff=unix
 
 map <Leader>du :diffupd<cr>
-map <Leader>gs :Gstatus<cr>
+map <Leader>gs :Git<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gc :Gcommit<cr>
 
@@ -92,3 +92,7 @@ autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setloca
 autocmd BufNewFile,BufRead !*.md set nospell
 
 set whichwrap+=<,>,h,l
+
+com! FormatXML :%!C:/python38/python -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+nnoremap = :FormatXML<Cr>
+
