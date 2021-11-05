@@ -13,6 +13,7 @@ Plug 'tpope/vim-sensible'
 Plug 'sjl/gundo.vim'
 Plug 'godlygeek/tabular'
 Plug 'zef/vim-cycle'
+Plug 'will133/vim-dirdiff'
 Plug 'tommcdo/vim-exchange'
 "Plug 'leafgarland/typescript-vim'
 Plug 'nanotech/jellybeans.vim'
@@ -86,7 +87,7 @@ autocmd BufEnter set ff=unix
 map <Leader>du :diffupd<cr>
 map <Leader>gs :Git<cr>
 map <Leader>gd :Gdiff<cr>
-map <Leader>gc :Gcommit<cr>
+map <Leader>gc :Git commit<cr>
 
 autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80 | setlocal formatoptions-=a
 autocmd BufNewFile,BufRead !*.md set nospell
