@@ -5,12 +5,14 @@ set packpath^=~/vimfiles
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
+Plug 'adelarsq/vim-matchit'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 "Plug 'rodjek/vim-puppet'
-Plug 'sjl/gundo.vim'
+"Plug 'simnalamburt/vim-mundo'
+Plug 'mbbill/undotree'
 Plug 'godlygeek/tabular'
 Plug 'zef/vim-cycle'
 Plug 'will133/vim-dirdiff'
@@ -91,6 +93,8 @@ map <Leader>gc :Git commit<cr>
 
 autocmd BufNewFile,BufRead *.md setlocal spell | setlocal spelllang=nl | setlocal textwidth=80 | setlocal formatoptions-=a
 autocmd BufNewFile,BufRead !*.md set nospell
+
+autocmd Filetype cs setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 set whichwrap+=<,>,h,l
 
